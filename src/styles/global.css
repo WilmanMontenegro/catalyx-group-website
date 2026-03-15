@@ -39,3 +39,33 @@ html.theme-dark .hero-overlay-main {
 html.theme-dark .hero-overlay-accent {
   background: linear-gradient(to top, rgba(192, 18, 46, 0.28), transparent);
 }
+
+.nav-shell {
+  margin-top: 0;
+  border-radius: 0 0 0.9rem 0.9rem;
+  border: 1px solid transparent;
+  background: transparent;
+  backdrop-filter: blur(0px);
+  box-shadow: none;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  transition: background-color 220ms ease, backdrop-filter 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.nav-shell--scrolled {
+  margin-top: 0;
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(11, 11, 16, 0.44);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.28);
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.nav-logo {
+  transition: height 220ms ease;
+}
+
+.nav-shell--scrolled .nav-logo {
+  height: 3.25rem;
+}

@@ -1,9 +1,9 @@
 ---
 ---
-<header class="absolute inset-x-0 top-0 z-20">
-  <nav class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5 text-hero-text">
+<header class="fixed inset-x-0 top-0 z-30 pointer-events-none">
+  <nav id="site-nav" class="nav-shell mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5 text-hero-text pointer-events-auto">
     <a href="/" class="flex items-center gap-3">
-      <img src="/logo.png" alt="Logo Catalyx Group" class="h-16 w-auto object-contain" loading="eager" decoding="async" />
+      <img src="/logo.png" alt="Logo Catalyx Group" class="nav-logo h-16 w-auto object-contain" loading="eager" decoding="async" />
       <span class="text-sm font-semibold tracking-[0.18em] text-hero-text md:text-base">CATALYX GROUP S.A.S</span>
     </a>
 
@@ -55,7 +55,8 @@
     const toggle = document.getElementById('theme-toggle');
     const sun = document.getElementById('icon-sun');
     const moon = document.getElementById('icon-moon');
-    if (!toggle) return;
+    const nav = document.getElementById('site-nav');
+    if (!toggle || !nav) return;
 
     const setToggleState = () => {
       const isDark = document.documentElement.classList.contains('theme-dark');
@@ -67,10 +68,36 @@
 
     setToggleState();
 
-    toggle.addEventListener('click', () => {
-      const isDark = document.documentElement.classList.toggle('theme-dark');
-      localStorage.setItem('theme-mode', isDark ? 'dark' : 'light');
-      setToggleState();
-    });
+    const setScrollState = () => {
+      nav.classList.toggle('nav-shell--scrolled', window.scrollY > 14);
+    };
+
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setScrollState();
+        ticking = false;
+      });
+    };
+
+    const previousState = window.__catalyxHeaderState;
+    if (previousState?.onScroll) {
+      window.removeEventListener('scroll', previousState.onScroll);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.__catalyxHeaderState = { onScroll };
+    setScrollState();
+
+    if (!toggle.dataset.boundThemeToggle) {
+      toggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('theme-dark');
+        localStorage.setItem('theme-mode', isDark ? 'dark' : 'light');
+        setToggleState();
+      });
+      toggle.dataset.boundThemeToggle = 'true';
+    }
   })();
 </script>
