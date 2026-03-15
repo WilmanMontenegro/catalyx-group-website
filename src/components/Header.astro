@@ -1,0 +1,76 @@
+---
+---
+<header class="absolute inset-x-0 top-0 z-20">
+  <nav class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5 text-hero-text">
+    <a href="/" class="flex items-center gap-3">
+      <img src="/logo.png" alt="Logo Catalyx Group" class="h-16 w-auto object-contain" loading="eager" decoding="async" />
+      <span class="text-sm font-semibold tracking-[0.18em] text-hero-text md:text-base">CATALYX GROUP S.A.S</span>
+    </a>
+
+    <ul class="hidden items-center gap-8 text-sm font-medium text-hero-muted md:flex">
+      <li><a href="#inicio" class="transition hover:text-hero-text">Inicio</a></li>
+      <li><a href="#servicios" class="transition hover:text-hero-text">Servicios</a></li>
+      <li><a href="#nosotros" class="transition hover:text-hero-text">Sobre nosotros</a></li>
+      <li><a href="#contacto" class="transition hover:text-hero-text">Contacto</a></li>
+    </ul>
+
+    <div class="flex items-center gap-3">
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="Cambiar tema"
+        title="Cambiar tema"
+        class="rounded-lg border border-ruby/70 bg-ruby/10 p-2.5 text-hero-text transition hover:bg-ruby/20"
+      >
+        <svg id="icon-sun" viewBox="0 0 24 24" fill="none" class="h-5 w-5" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8" />
+          <path d="M12 2V4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <path d="M12 19.5V22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <path d="M4.93 4.93L6.7 6.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <path d="M17.3 17.3L19.07 19.07" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <path d="M2 12H4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <path d="M19.5 12H22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <path d="M4.93 19.07L6.7 17.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <path d="M17.3 6.7L19.07 4.93" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+
+        <svg id="icon-moon" viewBox="0 0 24 24" fill="none" class="hidden h-5 w-5" aria-hidden="true">
+          <path
+            d="M20 14.2C19.2 14.5 18.4 14.7 17.5 14.7C13.5 14.7 10.3 11.5 10.3 7.5C10.3 6.6 10.5 5.8 10.8 5C7.4 5.6 4.8 8.6 4.8 12.2C4.8 16.2 8 19.4 12 19.4C15.6 19.4 18.6 16.8 20 13.4V14.2Z"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+
+      <a href="#contacto" class="rounded-lg border border-ruby px-4 py-2 text-sm font-semibold text-hero-text transition hover:bg-ruby">Agenda una reunión</a>
+    </div>
+  </nav>
+</header>
+
+<script is:inline>
+  (() => {
+    const toggle = document.getElementById('theme-toggle');
+    const sun = document.getElementById('icon-sun');
+    const moon = document.getElementById('icon-moon');
+    if (!toggle) return;
+
+    const setToggleState = () => {
+      const isDark = document.documentElement.classList.contains('theme-dark');
+      if (sun) sun.classList.toggle('hidden', isDark);
+      if (moon) moon.classList.toggle('hidden', !isDark);
+      toggle.setAttribute('aria-label', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+      toggle.setAttribute('title', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+    };
+
+    setToggleState();
+
+    toggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('theme-dark');
+      localStorage.setItem('theme-mode', isDark ? 'dark' : 'light');
+      setToggleState();
+    });
+  })();
+</script>

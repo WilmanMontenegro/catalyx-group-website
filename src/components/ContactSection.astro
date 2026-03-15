@@ -1,0 +1,66 @@
+<section id="contacto" class="bg-brand-text px-6 pb-24 pt-8 text-brand-bg md:pb-28 md:pt-10">
+  <div class="mx-auto max-w-6xl rounded-2xl border border-ruby/30 bg-brand-text p-8 md:p-10">
+    <div class="max-w-2xl">
+      <p class="text-xs font-bold uppercase tracking-[0.28em] text-ruby">Contacto</p>
+      <h2 class="mt-4 text-3xl font-bold leading-tight md:text-4xl">Cuéntanos qué quieres construir</h2>
+      <p class="mt-4 text-base leading-relaxed text-brand-bg/75">
+        Comparte tu necesidad y te ayudamos a definir la mejor solución para tu empresa.
+      </p>
+    </div>
+
+    <form class="mt-8 grid gap-5" action="#" method="post">
+      <label class="flex flex-col gap-2 text-sm text-brand-bg/70">
+        Nombre
+        <input
+          type="text"
+          name="nombre"
+          required
+          class="rounded-lg border border-ruby/30 bg-brand-text px-4 py-3 text-brand-bg outline-none transition focus:border-ruby"
+          placeholder="Tu nombre"
+        />
+      </label>
+
+      <label class="flex flex-col gap-2 text-sm text-brand-bg/70">
+        Correo corporativo
+        <input
+          type="email"
+          name="email"
+          required
+          class="rounded-lg border border-ruby/30 bg-brand-text px-4 py-3 text-brand-bg outline-none transition focus:border-ruby"
+          placeholder="correo@empresa.com"
+        />
+      </label>
+
+      <label class="flex flex-col gap-2 text-sm text-brand-bg/70">
+        Teléfono
+        <input
+          type="tel"
+          name="telefono"
+          class="rounded-lg border border-ruby/30 bg-brand-text px-4 py-3 text-brand-bg outline-none transition focus:border-ruby"
+          placeholder="+57 300 000 0000"
+        />
+      </label>
+
+      <label class="flex flex-col gap-2 text-sm text-brand-bg/70">
+        Mensaje
+        <textarea
+          name="mensaje"
+          rows="4"
+          required
+          class="rounded-lg border border-ruby/30 bg-brand-text px-4 py-3 text-brand-bg outline-none transition focus:border-ruby"
+          placeholder="Cuéntanos qué necesitas y en qué etapa está tu proyecto"
+        ></textarea>
+      </label>
+
+      <div>
+        <button
+          type="submit"
+          class="rounded-lg bg-ruby px-6 py-3 text-sm font-semibold text-brand-text transition hover:bg-ruby-bright"
+        >
+          Enviar mensaje
+        </button>
+        <p class="mt-3 text-sm text-brand-bg/70">Te contactamos en menos de 24 horas hábiles.</p>
+      </div>
+    </form>
+  </div>
+</section>

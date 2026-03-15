@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "engram": {
+      "command": "/home/wmontenegro/.local/bin/engram",
+      "args": ["mcp"]
+    }
+  }
+}

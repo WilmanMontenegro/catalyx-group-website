@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@theme {
+  --color-ruby: #c0122e;
+  --color-ruby-bright: #d4163c;
+  --color-brand-bg: #0b0b10;
+  --color-brand-text: #f8fafc;
+  --color-brand-muted: #cbd5e1;
+  --color-hero-text: #f8fafc;
+  --color-hero-muted: #e2e8f0;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html.theme-dark {
+  color-scheme: dark;
+  --color-brand-bg: #f8fafc;
+  --color-brand-text: #0b0b10;
+  --color-brand-muted: #94a3b8;
+}
+
+body {
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+.hero-overlay-main {
+  background: linear-gradient(to bottom, rgba(11, 11, 16, 0.46), rgba(11, 11, 16, 0.4), rgba(11, 11, 16, 0.34));
+}
+
+.hero-overlay-accent {
+  background: linear-gradient(to top, rgba(192, 18, 46, 0.18), transparent);
+}
+
+html.theme-dark .hero-overlay-main {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.6));
+}
+
+html.theme-dark .hero-overlay-accent {
+  background: linear-gradient(to top, rgba(192, 18, 46, 0.28), transparent);
+}
