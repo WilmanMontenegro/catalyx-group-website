@@ -38,6 +38,18 @@ const ogImage = new URL(`${import.meta.env.BASE_URL}/images/hero-poster.jpg`, As
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
     <link rel="icon" href={`${import.meta.env.BASE_URL}/favicon.ico`} />
 
+    <!-- Schema.org -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Catalyx Group S.A.S",
+      "url": canonicalURL,
+      "logo": ogImage,
+      "description": description,
+      "areaServed": "CO",
+      "serviceType": ["Consultoría de software", "Desarrollo a medida", "Implementación de soluciones tecnológicas"]
+    })} />
+
     <!-- Theme init (evitar FOUC) -->
     <script is:inline>
       (() => {

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://WilmanMontenegro.github.io/catalyx-group-website/sitemap-index.xml
