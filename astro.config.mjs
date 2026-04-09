@@ -5,8 +5,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://WilmanMontenegro.github.io',
-  base: '/catalyx-group-website',
+  site: 'https://techcelera.com',
+  base: '/',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]
