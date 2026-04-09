@@ -6,7 +6,7 @@ interface Props {
 
 const { title, description = 'Consultoría de software y desarrollo a medida para empresas. Diseñamos soluciones únicas para operar mejor, crecer más rápido y sin límites.' } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const ogImage = new URL(`${import.meta.env.BASE_URL}/images/hero-poster.jpg`, Astro.site);
+const ogImage = new URL("/images/hero-poster.jpg", Astro.site);
 ---
 
 <html lang="es">
@@ -35,14 +35,14 @@ const ogImage = new URL(`${import.meta.env.BASE_URL}/images/hero-poster.jpg`, As
     <meta name="twitter:image" content={ogImage} />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
-    <link rel="icon" href={`${import.meta.env.BASE_URL}/favicon.ico`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
 
     <!-- Schema.org -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Catalyx Group S.A.S",
+      "name": "TechCelera",
       "url": canonicalURL,
       "logo": ogImage,
       "description": description,
