@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://WilmanMontenegro.github.io/catalyx-group-website/sitemap-index.xml
+Sitemap: https://WilmanMontenegro.github.io/techcelera-website/sitemap-index.xml

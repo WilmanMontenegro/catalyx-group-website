@@ -2,11 +2,11 @@
 ---
 <header class="fixed inset-x-0 top-0 z-30 pointer-events-none">
   <nav id="site-nav" class="nav-shell mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5 text-hero-text pointer-events-auto">
-    <a href="/" class="flex flex-col items-start gap-1">
-      <img src="/logo.png" alt="Logo TechCelera" class="nav-logo h-16 w-auto object-contain" loading="eager" decoding="async" />
+    <a href="/" class="flex flex-row items-center gap-2.5">
+      <img src="/logo.png" alt="Logo TechCelera" class="nav-logo h-12 w-auto object-contain" loading="eager" decoding="async" />
       <div>
         <span class="text-sm font-semibold tracking-[0.18em] text-hero-text md:text-base">TECHCELERA</span>
-        <p class="text-xs font-light tracking-wider text-ruby-bright md:text-xs">Tecnología que acelera</p>
+        <p class="text-xs font-light tracking-wider text-ruby-bright md:text-xs">Tecnología estratégica</p>
       </div>
     </a>
 
@@ -116,13 +116,13 @@
       });
     };
 
-    const previousState = window.__catalyxHeaderState;
+    const previousState = window.__techceleraHeaderState;
     if (previousState?.onScroll) {
       window.removeEventListener('scroll', previousState.onScroll);
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.__catalyxHeaderState = { onScroll };
+    window.__techceleraHeaderState = { onScroll };
     setScrollState();
 
     if (!toggle.dataset.boundThemeToggle) {

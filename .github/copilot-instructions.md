@@ -1,7 +1,7 @@
 # Skill activa: Frontend Landing Premium B2B
 
 ### Objetivo
-Diseñar y evolucionar la landing de Catalyx con una estética premium, alto contraste y copy claro orientado a empresas.
+Diseñar y evolucionar la landing de TechCelera con una estética premium, alto contraste y copy claro orientado a empresas.
 
 ### Reglas de diseño
 - Priorizar layouts limpios, jerarquía visual clara y spacing amplio.
