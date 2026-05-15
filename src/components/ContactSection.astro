@@ -1,6 +1,10 @@
 ---
 import { Image } from 'astro:assets';
 import contactoImg from '../assets/images/contacto-equipo.jpg';
+import SocialLinks from './SocialLinks.astro';
+import { techceleraSocial } from '../data/social';
+
+const whatsapp = techceleraSocial.find((link) => link.id === 'whatsapp');
 ---
 
 <section id="contacto" class="bg-brand-text px-6 pb-16 pt-8 text-brand-bg sm:pb-20 md:pb-28 md:pt-10">
@@ -11,6 +15,22 @@ import contactoImg from '../assets/images/contacto-equipo.jpg';
       <p class="mt-4 text-base leading-relaxed text-brand-bg/75">
         Comparte tu necesidad y te ayudamos a definir la mejor solución para tu empresa.
       </p>
+      <div class="mt-8">
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-ruby">Síguenos</p>
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <SocialLinks links={techceleraSocial} />
+          {whatsapp && (
+            <a
+              href={whatsapp.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex h-11 shrink-0 items-center rounded-xl border border-ruby/40 bg-ruby/10 px-4 text-sm font-semibold text-ruby transition hover:border-ruby hover:bg-ruby hover:text-hero-text"
+            >
+              Escribir por WhatsApp
+            </a>
+          )}
+        </div>
+      </div>
     </div>
 
     <div class="mt-10 grid gap-8 lg:grid-cols-2 lg:items-stretch">

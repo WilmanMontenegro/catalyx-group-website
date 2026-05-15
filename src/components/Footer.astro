@@ -1,0 +1,35 @@
+---
+import SocialLinks from './SocialLinks.astro';
+import { techceleraMotto, techceleraSocial, techceleraTagline } from '../data/social';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-ruby/20 bg-brand-text px-6 py-12 text-brand-bg">
+  <div class="mx-auto max-w-6xl">
+    <div class="flex flex-col items-center text-center">
+      <a href="/" class="flex flex-col items-center gap-2">
+        <img src="/logo.png" alt="Logo TechCelera" class="h-14 w-auto object-contain" loading="lazy" decoding="async" />
+        <span class="text-sm font-semibold tracking-[0.2em] text-brand-bg">TECHCELERA</span>
+        <p class="text-xs tracking-wide text-ruby-bright">{techceleraTagline}</p>
+      </a>
+
+      <div class="mt-8">
+        <SocialLinks links={techceleraSocial} />
+      </div>
+
+      <p class="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand-bg/75">
+        {techceleraMotto.map((word, index) => (
+          <>
+            {index > 0 && <span class="text-ruby" aria-hidden="true">•</span>}
+            <span>{word}</span>
+          </>
+        ))}
+      </p>
+
+      <p class="mt-8 text-sm text-brand-bg/70">
+        © {year} TechCelera. Todos los derechos reservados.
+      </p>
+    </div>
+  </div>
+</footer>

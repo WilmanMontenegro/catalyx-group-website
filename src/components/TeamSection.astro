@@ -13,20 +13,13 @@ interface TeamMember {
 const team: TeamMember[] = [
   {
     name: "Wilman Montenegro",
-    role: "Ingeniero de Sistemas",
-    bio: "Desarrolla software que resuelve problemas reales. Curioso por naturaleza, creativo en cada solución y obsesionado con entregar calidad.",
+    role: "Ingeniero de Sistemas · Fundador de TechCelera",
+    bio: "Desarrollo software que resuelve problemas reales. Curioso por naturaleza, creativo en cada solución y obsesionado con entregar calidad en cada proyecto.",
     image: "/wilman-montenegro.png",
     linkedin: "https://www.linkedin.com/in/wilman-montenegro/",
     github: "https://github.com/wilmanmontenegro",
     twitter: "https://x.com/WilmanDev",
     portfolio: "https://wilman.dev",
-  },
-  {
-    name: "Bernabe Aguilar",
-    role: "Lic. en Administración de Empresas y Economía",
-    bio: "Especialista en estrategia de negocios y transformación digital. Traduce procesos complejos en datos claros que facilitan decisiones estratégicas.",
-    image: "",
-    linkedin: "https://www.linkedin.com/in/bernabeaguilar/",
   },
 ];
 
@@ -41,16 +34,16 @@ const stats = [
 <section id="equipo" class="bg-brand-text px-6 py-16 text-brand-bg md:py-24">
   <div class="mx-auto max-w-6xl">
     <div class="mx-auto max-w-3xl text-center">
-      <p class="text-xs font-bold uppercase tracking-[0.28em] text-ruby">Nuestro equipo</p>
+      <p class="text-xs font-bold uppercase tracking-[0.28em] text-ruby">Quién está detrás</p>
       <h2 class="mt-4 text-2xl font-bold leading-tight sm:text-3xl md:text-4xl">
-        Personas que hacen posible tu proyecto
+        Wilman Montenegro
       </h2>
       <p class="mt-4 text-base leading-relaxed text-brand-bg md:text-lg">
-        Un equipo multidisciplinario comprometido con entregar soluciones tecnológicas de alta calidad.
+        Ingeniero de sistemas y fundador de TechCelera, comprometido con entregar soluciones tecnológicas de alta calidad.
       </p>
     </div>
 
-    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
+    <div class="mt-12 mx-auto max-w-md">
       {team.map((member) => (
         <article class="group relative rounded-2xl border border-ruby/20 bg-brand-text p-8 transition-all duration-300 hover:border-ruby/50 hover:shadow-[0_0_40px_rgba(192,18,46,0.2)] hover:-translate-y-1">
           <div class="flex flex-col items-center text-center">
@@ -130,7 +123,7 @@ const stats = [
       ))}
     </div>
 
-    <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+    <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {stats.map((stat) => (
         <div class="rounded-xl border border-ruby/30 bg-ruby/10 p-6 text-center">
           <p class="text-3xl font-bold text-ruby">{stat.value}</p>

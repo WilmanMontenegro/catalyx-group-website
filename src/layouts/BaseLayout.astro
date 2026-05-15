@@ -1,4 +1,6 @@
 ---
+import { techceleraSocialUrls } from '../data/social';
+
 interface Props {
   title: string;
   description?: string;
@@ -48,7 +50,8 @@ const ogImage = new URL("/images/hero-poster.jpg", Astro.site);
       "logo": ogImage,
       "description": description,
       "areaServed": "CO",
-      "serviceType": ["Consultoría de software", "Desarrollo a medida", "Implementación de soluciones tecnológicas"]
+      "serviceType": ["Consultoría de software", "Desarrollo a medida", "Implementación de soluciones tecnológicas"],
+      "sameAs": techceleraSocialUrls
     })} />
 
     <!-- Theme init (evitar FOUC) -->
